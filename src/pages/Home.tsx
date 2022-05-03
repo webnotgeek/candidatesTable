@@ -1,12 +1,12 @@
-import Header from "../../components/header/Header";
-import CandidateTable from "../../components/candidate-table/CandidateTable";
-import Footer from "../../components/Footer";
-import React, {useEffect, useState} from "react";
-import {useGetCandidates} from "../../services/candidates.service";
-import {Filters} from "../../components/filters/Filters";
-import {useFilters} from "../../helpers/hooks";
+import CandidateTable from "../components/candidate-table/CandidateTable";
+import Footer from "../components/Footer";
+import React from "react";
+import {useGetCandidates} from "../services/candidates.service";
+import {Filters} from "../components/filters/Filters";
+import {useFilters} from "../helpers/hooks";
+import Header from "../components/header/Header";
 
-const Home = () => {
+export const Home = () => {
     const filters = useFilters();
     const {data, isError, isLoading} = useGetCandidates(filters)
 
@@ -29,5 +29,3 @@ const Home = () => {
         </div>
     )
 }
-
-export default Home;

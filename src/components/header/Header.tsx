@@ -1,5 +1,5 @@
 import './Header.scss';
-import Logo from '../../personio_logo.svg'
+import Logo from '../../../../candidates-table/src/personio_logo.svg'
 
 const Header = () => {
     return (
