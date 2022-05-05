@@ -14,32 +14,41 @@ const CandidateTable: FC<ICandidateTableProps> = ({candidates}) => {
         <>
             <div className="table-container">
                 <div className="container">
-                    <table className="table-fill">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Age</th>
-                            <th>Years of Experience</th>
-                            <th>Position Applied</th>
-                            <th>Applied</th>
-                            <th>Status</th>
-                        </tr>
-                        </thead>
-                        <tbody className="table-hover">
-                        {candidatesPage.map((candidate) => (
-                            <tr key={candidate?.id}>
-                                <td className="text-left">{candidate.name}</td>
-                                <td className="text-left">{candidate.email}</td>
-                                <td className="text-left">{candidate.age}</td>
-                                <td className="text-left">{candidate.experience}</td>
-                                <td className="text-left">{candidate.position}</td>
-                                <td className="text-left">{candidate.applicationDate}</td>
-                                <td className="text-left">{candidate.status}</td>
+
+                    <div className="table-holder">
+                        <table className="table">
+
+                        </table>
+                    </div>
+
+                    <div className="table-holder">
+                        <table className="table">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Age</th>
+                                <th>Years of Experience</th>
+                                <th>Position Applied</th>
+                                <th>Applied</th>
+                                <th>Status</th>
                             </tr>
-                        ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="table-hover">
+                            {candidatesPage.map((candidate) => (
+                                <tr key={candidate?.id}>
+                                    <td className="text-left">{candidate.name}</td>
+                                    <td className="text-left">{candidate.email}</td>
+                                    <td className="text-left">{candidate.age}</td>
+                                    <td className="text-left">{candidate.experience}</td>
+                                    <td className="text-left">{candidate.position}</td>
+                                    <td className="text-left">{candidate.applicationDate}</td>
+                                    <td className="text-left">{candidate.status}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

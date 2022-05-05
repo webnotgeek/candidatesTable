@@ -13,8 +13,9 @@ export const Filters: FC<FilterProps> = ({positions}) => {
     const [_, setSearchParams] = useSearchParams();
 
     const handleFiltersChange = useCallback((value: Record<string, string>) => {
-        filters.page = ''
-        setSearchParams({...removeEmptyValues(filters), ...value})
+        filters.page = '';
+
+        setSearchParams({...removeEmptyValues({filters , ...value})})
     }, [filters])
 
 
