@@ -2,7 +2,7 @@ import {useSearchParams} from "react-router-dom";
 import {ICandidatesFilter} from "../models/candidate.interface";
 
 export const useFilters = () : ICandidatesFilter => {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, _] = useSearchParams();
 
     const filter: ICandidatesFilter = {
         name: searchParams.get('name') || '',

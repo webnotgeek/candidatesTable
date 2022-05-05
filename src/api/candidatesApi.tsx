@@ -1,10 +1,9 @@
 import axios, {AxiosResponse} from "axios";
 import candidatesAdapter from "../adapters/candidates.adapter";
 import {ICandidate, ICandidateAdapter} from "../models/candidate.interface";
+import {apiVersion, endpointPath} from "../constants/constants";
 
-const apiVersion = 'v1/';
-const endpointPath = 'api/';
-const url = `https://personio-fe-test.herokuapp.com/${endpointPath}${apiVersion}`;
+const url = `https://personio-fe-test.herokuapp.com/${endpointPath}/${apiVersion}/`;
 const api = axios.create({
     baseURL: url
 })

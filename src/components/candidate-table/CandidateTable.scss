@@ -1,5 +1,13 @@
+.table-container {
+  padding-bottom: 32px;
+}
+
+.pagination-holder {
+  position: sticky;
+  bottom: 0;
+}
+
 .table-fill {
-  margin-top: 60px;
   background: white;
   border-radius: 3px;
   border-collapse: collapse;

@@ -1,7 +1,7 @@
 import {FunctionComponent} from 'react';
 import './App.scss';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from "./pages/home/Home";
+import {Home} from "./pages/Home";
 
 const App: FunctionComponent = () => {
 

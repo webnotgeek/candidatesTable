@@ -1,7 +1,8 @@
 import './Header.scss';
 import Logo from '../../../../candidates-table/src/personio_logo.svg'
+import {FC} from "react";
 
-const Header = () => {
+export const Header: FC = () => {
     return (
         <header>
             <div className="logo">
@@ -19,4 +20,3 @@ const Header = () => {
     )
 }
 
-export default Header;
