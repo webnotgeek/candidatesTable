@@ -14,8 +14,7 @@ export const Filters: FC<FilterProps> = ({positions}) => {
 
     const handleFiltersChange = useCallback((value: Record<string, string>) => {
         filters.page = '';
-
-        setSearchParams({...removeEmptyValues({filters , ...value})})
+        setSearchParams({...removeEmptyValues({...filters , ...value})})
     }, [filters])
 
 
@@ -46,7 +45,7 @@ export const Filters: FC<FilterProps> = ({positions}) => {
                                     name="position"
                                     value={filters.position}
                                     onChange={(e) => handleFiltersChange({position: e.target.value})}>
-                                <option value="">Position</option>
+                                <option value="">Positions</option>
                                 {
                                     positions.map((position, id) => (
                                         <option value={position}
@@ -61,7 +60,7 @@ export const Filters: FC<FilterProps> = ({positions}) => {
                                 <option value="">Sort</option>
                                 <option value="experience">Years of Experience</option>
                                 <option value="applicationDate">Date of Application</option>
-                                <option value="positions">Positions</option>
+                                <option value="position">Position</option>
                             </select>
 
                         </div>

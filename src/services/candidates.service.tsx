@@ -1,9 +1,7 @@
 import {useQuery} from "react-query";
 import * as api from "../api/candidatesApi";
 import {ICandidateAdapter, ICandidatesFilter} from "../models/candidate.interface";
-import {PAGE_SIZE} from "../constants/constants";
 
-// const isKeyOfCandidate = (key: string) => (typeof ICandidateAdapter)
 
 const filterCandidates = (candidates: ICandidateAdapter[], filters?: ICandidatesFilter): ICandidateAdapter[] => {
 
@@ -12,24 +10,27 @@ const filterCandidates = (candidates: ICandidateAdapter[], filters?: ICandidates
     }
 
     const {sortBy, page, ...restFilters} = filters;
+
     let filteredCandidates = candidates?.filter((candidate: ICandidateAdapter) => {
         return Object.entries(restFilters).every(([k, v]) => (candidate[k as keyof typeof candidate] as string).includes(v))
     });
 
-
-
     if (sortBy) {
         filteredCandidates = filteredCandidates.sort((a, b) => {
-            if (filters.sortBy === 'applicationDate') {
-                return new Date(a[sortBy as keyof typeof a]).getTime() - new Date(b[sortBy as keyof typeof b]).getTime()
+            switch (filters.sortBy) {
+                case "applicationDate":
+                    return new Date(a[sortBy as keyof typeof a]).getTime() - new Date(b[sortBy as keyof typeof b]).getTime()
+                case "position":
+                    // @ts-ignore
+                    return a[sortBy] < b[sortBy] ? 1 : a[sortBy] > b[sortBy] ? -1 : 0
+                default:
+                    // @ts-ignore
+                    return a[sortBy] - b[sortBy]
             }
-            // @ts-ignore
-            return a[sortBy] - b[sortBy]
         });
     }
 
     return filteredCandidates;
-
 }
 
 

@@ -1,8 +1,8 @@
 .pagination-container {
   margin-top: auto;
-  background: rgba(255,255,255,.95);
+  background: rgba(255, 255, 255, .95);
   padding: 2px 0;
-  box-shadow: 0 0 40px rgba(0,0,0,0.1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 
 .page {
@@ -12,9 +12,7 @@
   padding: 0;
   margin: 32px 0;
 
-  &__numbers,
-  &__btn,
-  &__dots {
+  &__numbers {
     display: flex;
     justify-content: center;
     align-items: center;

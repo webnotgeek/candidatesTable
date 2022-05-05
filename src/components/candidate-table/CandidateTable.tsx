@@ -12,15 +12,8 @@ const CandidateTable: FC<ICandidateTableProps> = ({candidates}) => {
     const candidatesPage = usePagination(candidates);
     return (
         <>
-            <div className="table-container">
+            <div className="table-container grow">
                 <div className="container">
-
-                    <div className="table-holder">
-                        <table className="table">
-
-                        </table>
-                    </div>
-
                     <div className="table-holder">
                         <table className="table">
                             <thead>
@@ -52,7 +45,7 @@ const CandidateTable: FC<ICandidateTableProps> = ({candidates}) => {
                 </div>
             </div>
 
-            <div className="pagination-holder flex flex-column grow">
+            <div className="pagination-holder flex flex-column">
                 <Pagination total={candidates.length}/>
             </div>
         </>
