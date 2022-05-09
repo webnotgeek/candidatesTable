@@ -55,6 +55,7 @@ export const Filters: FC<FilterProps> = ({positions}) => {
                             </select>
 
                             <select className="tp-input"
+                                    value={filters.sortBy}
                                     name="sortBy"
                                     onChange={(e) => handleFiltersChange({sortBy: e.target.value})}>
                                 <option value="">Sort</option>
