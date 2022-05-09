@@ -49,5 +49,21 @@
     padding: 16px;
     font-size: 14px;
     border-bottom: 1px solid rgba(224, 224, 224, 1);
+    > span {
+      display: block;
+      height: 20px;
+      width: 80%;
+      background: #eee;
+      background: linear-gradient(110deg, rgba(221, 221, 221, 0.863) 8%, #ecebeb 18%, rgba(221, 221, 221, 0.863) 33%);
+      background-size: 200% 500%;
+      animation: 1s shine linear infinite;
+    }
+  }
+}
+
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
   }
 }

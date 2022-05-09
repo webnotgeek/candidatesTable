@@ -5,6 +5,7 @@ import {useGetCandidates} from "../services/candidates.service";
 import {Filters} from "../components/filters/Filters";
 import {useFilters} from "../helpers/hooks";
 import {Header} from "../components/header/Header";
+import {LoadingTable} from "../components/loading-table/LoadingTable";
 
 export const Home = () => {
     const filters = useFilters();
@@ -17,9 +18,9 @@ export const Home = () => {
             <div className="content flex flex-column grow width-full m-x-auto">
                 <Filters positions={data?.positions || []}/>
                 <div className="candidates-table-container flex flex-column grow">
-                    {isLoading && <h1>Loading</h1>}
+                    {isLoading && <LoadingTable />}
+                    {!!data?.candidates.length && <CandidateTable candidates={data.candidates} />}
                     {isError && <h1>Something went wrong</h1>}
-                    {!!data?.candidates.length && <CandidateTable candidates={data.candidates}/>}
                 </div>
             </div>
 

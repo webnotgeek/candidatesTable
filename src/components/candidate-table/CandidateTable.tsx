@@ -5,11 +5,12 @@ import {usePagination} from "../pagination/usePagination";
 import {FC} from "react";
 
 interface ICandidateTableProps {
-    candidates: ICandidateAdapter[]
+    candidates: ICandidateAdapter[];
 }
 
 const CandidateTable: FC<ICandidateTableProps> = ({candidates}) => {
     const candidatesPage = usePagination(candidates);
+
     return (
         <>
             <div className="table-container grow">
