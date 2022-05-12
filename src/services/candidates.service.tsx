@@ -21,11 +21,9 @@ const filterCandidates = (candidates: ICandidateAdapter[], filters?: ICandidates
                 case "applicationDate":
                     return new Date(a[sortBy as keyof typeof a]).getTime() - new Date(b[sortBy as keyof typeof b]).getTime()
                 case "position":
-                    // @ts-ignore
-                    return a[sortBy] < b[sortBy] ? 1 : a[sortBy] > b[sortBy] ? -1 : 0
+                    return a[sortBy as keyof typeof a] < b[sortBy as keyof typeof b] ? 1 : a[sortBy as keyof typeof a] > b[sortBy as keyof typeof b] ? -1 : 0
                 default:
-                    // @ts-ignore
-                    return a[sortBy] - b[sortBy]
+                    return a[sortBy as keyof typeof a] - b[sortBy as keyof typeof b]
             }
         });
     }

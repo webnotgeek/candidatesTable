@@ -16,7 +16,7 @@ export interface ICandidateAdapter {
     age: number;
     experience: number;
     position: string;
-    applicationDate: string;
+    applicationDate: string | any;
     status: CandidateStatusEnum;
 }
 
